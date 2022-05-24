@@ -5,15 +5,6 @@
   justify-content: center;
 }
 
-.container {
-  width: 100vw;
-  height: 90vh;
-  overflow: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 mat-card {
   margin-top: 24px;
   max-width: 800px;
@@ -53,6 +44,14 @@ mat-form-field {
 }
 
 @media (max-width: 800px) {
+  .container {
+    width: 100vw;
+    height: 90vh;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   mat-card {
     margin-top: 3vh;
     width: 90vw;
@@ -63,7 +62,7 @@ mat-form-field {
   }
 
   .backgroud-container {
-    margin: 3vw 3vh;
+    margin: 3vw 0;
     height: 90vw;
     width: 90vw;
   }

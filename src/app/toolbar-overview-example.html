@@ -3,36 +3,36 @@
 </mat-toolbar>
 
 <div class="container">
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>
-      <mat-form-field appearance="legacy">
-      <mat-label>身份证号: </mat-label>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <mat-form-field appearance="legacy" *ngIf="!isPrint">
+          <mat-label>身份证号: </mat-label>
 
-        <input matInput [(ngModel)]="input" />
-        <button
-          matSuffix
-          mat-icon-button
-          aria-label="search"
-          color="primary"
-          (click)="getUser()"
-        >
-          <mat-icon>search</mat-icon>
-        </button>
-      </mat-form-field>
-      <h2>姓名: {{ user.name}}</h2>
-    </mat-card-title>
-  </mat-card-header>
+          <input matInput [(ngModel)]="input" />
+          <button
+            matSuffix
+            mat-icon-button
+            aria-label="search"
+            color="primary"
+            (click)="getUser()"
+          >
+            <mat-icon>search</mat-icon>
+          </button>
+        </mat-form-field>
+        <h2>姓名: {{ user.name}}</h2>
+      </mat-card-title>
+    </mat-card-header>
 
-  <div class="backgroud-container">
-    <div class="number-container">{{ user.number }}</div>
-    <div class="position">上海站</div>
-  </div>
-  <mat-card-content>
-    <p>*如果使用Mac系统，打印时请确认设置选项里“背景图案”选项已钩上</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="print()">打印</button>
-  </mat-card-actions>
-</mat-card>
+    <div class="backgroud-container">
+      <div class="number-container">{{ user.number }}</div>
+      <div class="position">上海站</div>
+    </div>
+    <mat-card-content *ngIf="!isPrint">
+      <p>*如果使用Mac系统，打印时请确认设置选项里“背景图案”选项已钩上</p>
+    </mat-card-content>
+    <mat-card-actions *ngIf="!isPrint">
+      <button mat-raised-button color="primary" (click)="print()">打印</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

@@ -11,14 +11,18 @@ import { Component } from '@angular/core';
 export class ToolbarOverviewExample {
   input: string = '';
   user: People = { id: '', name: '', number: '000' };
+  isPrint: boolean = false;
 
   getUser() {
     this.user = USER_LIST.filter((item) => item.id === this.input)[0];
   }
 
   print() {
-    window.print();
-    // window.close();
+    this.isPrint = true;
+    window.setTimeout(() => {
+      window.print();
+      this.isPrint = false;
+    }, 500);
   }
 }
 
