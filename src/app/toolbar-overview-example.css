@@ -1,3 +1,28 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.example-card {
+  max-width: 600px;
+}
+
+.backgroud-container {
+  height: 480px;
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url('./../assets/bg640x.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.number-container {
+  font-size: 16rem;
+  color: white;
+  font-weight: bold;
+  z-index: 2;
+}
