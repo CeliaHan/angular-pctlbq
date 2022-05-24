@@ -3,7 +3,7 @@
 </mat-toolbar>
 
 <div class="container">
-  <mat-card>
+  <mat-card [class.print]="isPrint">
     <mat-card-header>
       <mat-card-title>
         <mat-form-field appearance="legacy" *ngIf="!isPrint">
@@ -24,7 +24,7 @@
       </mat-card-title>
     </mat-card-header>
 
-    <div class="backgroud-container" [class.print]="isPrint">
+    <div class="backgroud-container">
       <div class="number-container">{{ user.number }}</div>
       <div class="position">上海站</div>
     </div>
