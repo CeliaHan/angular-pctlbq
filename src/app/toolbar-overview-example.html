@@ -24,7 +24,7 @@
       </mat-card-title>
     </mat-card-header>
 
-    <div class="backgroud-container">
+    <div class="backgroud-container" [class.print]="isPrint">
       <div class="number-container">{{ user.number }}</div>
       <div class="position">上海站</div>
     </div>
