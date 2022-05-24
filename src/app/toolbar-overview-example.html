@@ -1,26 +1,26 @@
 <mat-toolbar color="primary">
-  <span>My Application</span>
+  <span>央音全国青少年艺术展演</span>
 </mat-toolbar>
 
-<mat-card class="example-card">
+<mat-card>
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <mat-card-title>
+      <mat-label>身份证号: </mat-label>
+      <mat-form-field appearance="legacy">
+        <input matInput />
+      </mat-form-field>
+      <h2>姓名: </h2>
+    </mat-card-title>
   </mat-card-header>
+
   <div class="backgroud-container">
     <div class="number-container">{{ id }}</div>
-    <div>上海站</div>
+    <div class="position">上海站</div>
   </div>
   <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
+    <p>*打印时请确认设置选项里“背景图案”选项已钩上</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+    <button mat-raised-button color="primary">打印</button>
   </mat-card-actions>
 </mat-card>

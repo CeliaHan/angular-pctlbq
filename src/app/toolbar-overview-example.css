@@ -1,12 +1,21 @@
-.example-spacer {
-  flex: 1 1 auto;
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.example-card {
+mat-card {
+  margin-top: 24px;
   max-width: 600px;
 }
 
+mat-form-field {
+  width: 320px;
+}
+
 .backgroud-container {
+  margin: 16px 0;
   height: 480px;
   width: 480px;
   display: flex;
@@ -14,15 +23,21 @@
   justify-content: center;
   align-items: center;
 
-  background-image: url('./../assets/bg.png');
+  background-image: url('./../assets/bg640.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .number-container {
-  font-size: 16rem;
+  font-size: 12rem;
+  padding: 5rem;
   color: white;
   font-weight: bold;
   z-index: 2;
+}
+
+.position {
+  color: white;
+  font-size: 3rem;
 }
