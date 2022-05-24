@@ -2,25 +2,37 @@
   <span>央音全国青少年艺术展演</span>
 </mat-toolbar>
 
+<div class="container">
 <mat-card>
   <mat-card-header>
     <mat-card-title>
-      <mat-label>身份证号: </mat-label>
       <mat-form-field appearance="legacy">
-        <input matInput />
+      <mat-label>身份证号: </mat-label>
+
+        <input matInput [(ngModel)]="input" />
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="search"
+          color="primary"
+          (click)="getUser()"
+        >
+          <mat-icon>search</mat-icon>
+        </button>
       </mat-form-field>
-      <h2>姓名: </h2>
+      <h2>姓名: {{ user.name}}</h2>
     </mat-card-title>
   </mat-card-header>
 
   <div class="backgroud-container">
-    <div class="number-container">{{ id }}</div>
+    <div class="number-container">{{ user.number }}</div>
     <div class="position">上海站</div>
   </div>
   <mat-card-content>
-    <p>*打印时请确认设置选项里“背景图案”选项已钩上</p>
+    <p>*如果使用Mac系统，打印时请确认设置选项里“背景图案”选项已钩上</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button color="primary">打印</button>
+    <button mat-raised-button color="primary" (click)="print()">打印</button>
   </mat-card-actions>
 </mat-card>
+</div>
