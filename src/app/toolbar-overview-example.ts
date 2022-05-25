@@ -14,7 +14,7 @@ export class ToolbarOverviewExample {
   isPrint: boolean = false;
 
   getUser() {
-    this.user = DATA_SET.filter((item) => item.id === this.input)[0];
+    this.user = DATA_SET.filter((item) => item.id === this.input)[0] as People;
   }
 
   print() {
