@@ -14,8 +14,18 @@ mat-card {
   align-items: center;
 }
 
-mat-form-field {
-  width: 24vw;
+#id-input {
+  width: 60%;
+  min-width: 60%;
+  padding-right: 5%;
+}
+
+#show-input{
+  width: 20%;
+  min-width: 20%;
+
+  padding-right: 5%;
+
 }
 
 .backgroud-container {
@@ -63,25 +73,25 @@ mat-form-field {
   font-size: 8vw;
 }
 
-@media (max-width: 800px) {
-  /* mat-card {
+/* @media (max-width: 800px) {
+  mat-card {
     margin-top: 3vh;
-    width: 90vw;
+    max-width: 90vw;
     overflow: auto;
-  } */
+  }
 
-  /* .backgroud-container {
+  .backgroud-container {
     margin: 3vw 0;
     height: 90vw;
     width: 90vw;
-  } */
+  }
 
-  /* .number-container {
+  .number-container {
     font-size: 38vw;
-    padding: 20vw;
-  } */
+    padding: 16vw;
+  }
 
-  /* .position {
+  .position {
     font-size: 10vw;
-  } */
-}
+  }
+} */

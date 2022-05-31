@@ -5,23 +5,29 @@
 <div class="container">
   <mat-card [class.print]="isPrint">
     <mat-card-header>
-      <mat-card-title>
-        <mat-form-field appearance="legacy" *ngIf="!isPrint">
+      <mat-card-title  *ngIf="!isPrint">
+        <mat-form-field appearance="legacy" id="id-input">
           <mat-label>身份证/护照: </mat-label>
-
           <input matInput [(ngModel)]="input" />
-          <button
+        </mat-form-field>
+        <mat-form-field appearance="legacy" id="show-input">
+          <mat-label>节目</mat-label>
+          <mat-select [(value)]="count">
+            <mat-option *ngFor="let item of countList" [value]="item">{{item+1}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button
             matSuffix
-            mat-icon-button
+            mat-mini-fab
             aria-label="search"
             color="primary"
-            (click)="getUser()"
-          >
+            (click)="getUser()">
             <mat-icon>search</mat-icon>
-          </button>
-        </mat-form-field>
-        <h2>姓名: {{ user.name}}</h2>
+        </button>
       </mat-card-title>
+      <mat-card-subtitle>
+        <h2>姓名: {{ user.name}}</h2>
+      </mat-card-subtitle>
     </mat-card-header>
 
     <div class="backgroud-container">
@@ -29,7 +35,8 @@
       <div class="position">上海站</div>
     </div>
     <mat-card-content *ngIf="!isPrint">
-      <p>*如果使用Mac系统，打印时请确认设置选项里“背景图案”选项已钩上</p>
+      <p>*打印时请确认设置选项里“背景图案”选项已钩上</p>
+      <p>*请彩色打印</p>
     </mat-card-content>
     <mat-card-actions *ngIf="!isPrint">
       <button mat-raised-button color="primary" (click)="print()">打印</button>

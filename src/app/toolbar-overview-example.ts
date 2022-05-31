@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 /**
  * @title Toolbar overview
@@ -12,9 +13,24 @@ export class ToolbarOverviewExample {
   input: string = '';
   user: People = { id: '', name: '', number: '000' };
   isPrint: boolean = false;
+  count: number = 0;
+  countList: number[] = [0, 1, 2, 3, 4];
 
+  constructor(private _snackBar: MatSnackBar) {}
+
+  openSnackBar(user:People, count: number) {
+    this._snackBar.open(`${user.name}没有第${count}个节目`, '关闭');
+  }
+  
   getUser() {
-    this.user = DATA_SET.filter((item) => item.id === this.input)[0] as People;
+    const searched = DATA_SET.filter((item) => item.id === this.input);
+    if(searched.length < (this.count+1)) {
+      this.user = searched[0] as People;
+      this.openSnackBar(this.user, this.count+1);
+      return;
+    }
+      this.user = searched[this.count] as People;
+
   }
 
   print() {
@@ -25,11 +41,6 @@ export class ToolbarOverviewExample {
     }, 500);
   }
 }
-
-const USER_LIST = [
-  { id: '124444', name: '111', number: '011' },
-  { id: '224444', name: '222', number: '222' },
-];
 
 interface People {
   id: string;
