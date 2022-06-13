@@ -61,8 +61,8 @@ mat-card {
 }
 
 .print .backgroud-container {
-  height: 60vw;
-  width: 60vw;
+  height: 62vw;
+  width: 62vw;
 }
 
 .print .number-container {
@@ -72,26 +72,3 @@ mat-card {
 .print .position {
   font-size: 8vw;
 }
-
-/* @media (max-width: 800px) {
-  mat-card {
-    margin-top: 3vh;
-    max-width: 90vw;
-    overflow: auto;
-  }
-
-  .backgroud-container {
-    margin: 3vw 0;
-    height: 90vw;
-    width: 90vw;
-  }
-
-  .number-container {
-    font-size: 38vw;
-    padding: 16vw;
-  }
-
-  .position {
-    font-size: 10vw;
-  }
-} */
